@@ -1,0 +1,418 @@
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;;
+    color: #333;
+    min-width: 1226px;
+}
+
+.top{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+}
+.navigation,.navigation li,.user-info li{
+    float: left;
+}
+.shop,.user,.shop,.shop-cart{
+    float: right;
+}
+a{
+    text-decoration: none;
+    color:#333;
+    text-align: center;
+}
+.topbar a{
+    display: block;
+    color: #B0B0B0;
+    font-size: 12px;
+}
+.topbar a:hover{
+    color: white;
+}
+.line{
+    font-size: 15px;
+    color: #424242;
+    margin: 0 8px;
+}
+.shop-cart i{
+    margin-right: 2px;
+}
+.shop-cart a{
+    width: 120px;
+    background-color: #424242;
+}
+.shop{
+    position: relative;
+}
+.shop-car{
+    visibility: hidden;
+    position: absolute;
+    left: -195px;
+    font-size: 10px;
+    color:black;
+    background-color: white;
+}
+.shop-cart:hover .shop-car {
+    visibility: visible;
+    width: 315px;
+    height: 100px;
+    box-shadow: 0 5px 3px rgba(0,0,0,.2);
+    line-height: 100px;
+    text-align: center;
+    z-index: 1000;
+}
+.shop-cart:hover .shop-text{
+    color: black;
+}
+.shop:hover .shop-list{
+    color: orange;
+    background-color: white;
+}
+.user{
+    margin-right: 20px;
+}
+.app{
+    position: absolute;
+    width: 118px;
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    line-height: 1;
+/*  此处line-height为1表示字体的行间距为1倍，覆盖body的设置  */
+    left: -34px;
+    transition: height 0.4s;
+/*  样式过渡效果 当元素高度发生变化时，元素会慢慢浮现  */
+}
+.app img{
+    margin: 17px 17px;
+    margin-bottom: 12px;
+}
+.download{
+    position: relative;
+}
+.download::after{
+    content: '';
+    display: none;
+    position: absolute;
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: #ffffff;
+    width: 0;
+    height: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+/*  transparent表示颜色透明
+  当边框没有上边框并且元素大小为0时，边框的下边框则显示为三角形
+   设置绝对定位以后 left和right设置为0 margin设置为0 auto 可设置水平居中
+   */
+}
+.download:hover .app,
+.download:hover::after{
+    display: block;
+    height: 140px;
+}
+.header{
+    height: 100px;
+}
+.logo{
+    margin-top: 22px;
+    position: relative;
+    float: left;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+}
+.logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 0;
+    background-color: orange;
+    background-position: center;
+    transition: left 0.3s;
+}
+.mi{
+    background-image: url("../mi-logo.png");
+}
+.home{
+    left: -55px;
+    background-image: url("../mi-home.png");
+}
+.logo:hover .mi{
+    left: 55px;
+}
+.logo:hover .home{
+    left: 0;
+}
+.nav{
+    position: relative;
+    float: left;
+    margin-left: 80px;
+    padding-left: 10px;
+}
+.nav li{
+    float: left;
+    line-height: 100px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+.hx{
+    visibility: hidden;
+}
+.nav li a{
+    display: block;
+    height: 100px;
+}
+.nav li:hover .s{
+    color: orange;
+}
+.head-wrapper{
+    position: relative;
+}
+.fenlei{
+    background-color: white;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    transition: height 0.3s;
+}
+.fenleidian:hover ~.fenlei
+,.fenlei:hover{
+    height: 229px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.3);
+    border-top: 1px gray solid;
+    z-index: 999;
+}
+.search{
+    float:right;
+    margin-top:25px;
+    width: 300px;
+    height: 50px;
+    background-color:#ffffff;
+    line-height: 50px;
+}
+.sousuokuang{
+    border: 1px gray solid;
+    box-sizing: content-box;
+    padding: 0;
+    width: 235px;
+    height: 48px;
+    float: left;
+    padding-left: 10px;
+    font-size: 16px;
+    border-right: none;
+
+}
+.anniu{
+    width: 53px;
+    height: 50px;
+    border: 1px gray solid;
+    float: left;
+    font-size: 18px;
+    color: gray;
+    background-color: white;
+    transition: color 0.2s;
+}
+.sousuokuang:focus{
+    border: orange 1px solid;
+    border-right: none;
+}
+.sousuokuang:focus +.anniu{
+    border: orange 1px solid;
+}
+.anniu:hover{
+    color: white;
+    background-color: orange;
+    border: 1px orange solid;
+}
+.goods-type{
+    background-color: gray;
+    width: 234px;
+    height: 420px;
+    position: absolute;
+    left: -135px;
+    padding: 20px 0;
+    line-height: 1;
+    z-index: 900;
+}
+.goods-type .z{
+    display: block;
+    height: 42px;
+    font-size: 14px;
+    color: white;
+    line-height:42px;
+    width:174px;
+    text-align: left;
+    padding: 0 30px;
+}
+.z i{
+    float: right;
+    line-height: 42px;
+}
+.z:hover{
+    background-color:#FF6700;
+}
+.banner{
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+}
+.banner .img-list{
+    position:absolute;
+}
+.banner .img-list li{
+    float: left;
+}
+.banner img{
+    /*
+    图片指定宽度百分比是相对于父元素
+     */
+    width: 1226px;
+    vertical-align: top;
+}
+
+
+.pointer{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+.pointer li{
+    float: left;
+}
+.pointer a{
+    float: left;
+    width: 7px;
+    height: 7px;
+    background-color: #7D6E62;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: 6px;
+}
+.pointer a:hover{
+    background-color: white;
+    border-color:#7D6E62 ;
+}
+.prew,.next{
+    width: 41px;
+    height: 69px;
+    background-image: url("../image/icon-slides.png");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.next{
+    right: 0;
+    background-position: -125px 0;
+}
+.prew{
+    left: 232px;
+    background-position: -84px 0;
+}
+.next:hover{
+    background-position:-42px;
+}
+.prew:hover{
+    background-position:0;
+}
+.cebian{
+    width: 25px;
+    height: 195px;
+    position: fixed;
+    bottom: 60px;
+    right: 50%;
+    margin-right: -640px;
+    z-index: 9999;
+    border: gray 1px solid;
+}
+.cebian a{
+    display: block;
+    width: 100%;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+
+}
+.cebian .first{
+    border-bottom: gray 1px solid;
+}
+.cebian a:hover i{
+    color: orange;
+}
+.ad{
+    margin-top: 14px;
+    height: 170px;
+}
+.ad-short{
+    height: 100%;
+    width: 234px;
+    background-color: #5F5750;
+    margin-right: 14px;
+}
+.ad-short,.ad-imgs{
+    float: left;
+}
+.ad li{
+    float: left;
+    position: relative;
+}
+.ad-imgs img{
+    height: 100%;
+    width: 316px;
+}
+.ad-imgs li:last-child{
+    margin-right: 0;
+}
+.ad-imgs li{
+    margin-right: 15px;
+}
+.ad-short a{
+    display: block;
+    height: 84px;
+    width: 76px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    color: #CFCCCA;
+}
+.ad-short a i{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.ad-short li::before{
+    content: '';
+    height: 1px;
+    width: 70px;
+    background-color: #7D6E62;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 2px;
+}
+.ad-short li::after{
+    content: '';
+    height: 70px;
+    width: 1px;
+    background-color: #7D6E62;
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin: auto 0;
+    margin-left: 1px;
+}
+.ad a:hover{
+    color: white;
+}
+
